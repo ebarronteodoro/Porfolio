@@ -1,0 +1,65 @@
+---
+import CSS from "./icons/CSS.astro";
+import HTML from "./icons/HTML.astro";
+import JavaScript from "./icons/JavaScript.astro";
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-[#f06529] text-white",
+        icon: HTML,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#2965f1] text-white",
+        icon: CSS,
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-[#f7df1e] text-black",
+        icon: JavaScript,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Typing Practice Zone",
+        description:
+            "Juego de mecanografía en el que puedes practicar tu velocidad y precisión al escribir palabras",
+        link: "https://typingpracticezone.netlify.app",
+        github: "https://github.com/ebarronteodoro/Typing-Practice-Zone",
+        image: "/projects/tpz-ss.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image }) => (
+        <article class="group">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`${tag.class} flex gap-x-2 rounded-full text-sm py-1 px-2 items-center font-medium`}
+                        >
+                            <tag.icon class="size-5" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <div class="w-full md:w-1/2">
+                <div class="relative transition duration-500 rounded-xl overflow-clip">
+                    <img
+                        class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                        src={image}
+                        alt={`Captura de pantalla del proyecto ${title}`}
+                    />
+                </div>
+            </div>
+        </article>
+    ))
+}

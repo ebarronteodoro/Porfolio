@@ -6,50 +6,72 @@ import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import GithubIcon from "../components/icons/Github.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout title="Portafolio Esteban Barrón - Desarrollador y Programador Web" description="Contrata a Esteban y descubre cómo puede llevar tu proyecto al siguiente nivel.">
-	<main>
-		<SectionContainer class="py-20 pb-16">
-			<img
-				class="rounded-full size-16 mb-4 border-3 border-gray-300 rounded-[60% 40% 30% 70%/60% 30% 70% 40%] animate-change-border-radius" src="https://ebarronteodoro.github.io/mi-portafolio-web/images/Esteban.jpg"
-				alt="esteban"
-			/>
+<Layout
+	title="Porfolio Esteban Barrón - Desarrollador y Programador Web"
+	description="Contrata a Esteban y descubre cómo puede llevar tu proyecto al siguiente nivel."
+>
+	<main class="px-4">
+		<SectionContainer class="py-16">
+			<div class="flex gap-4 mb-4 items-center">
+				<img
+					class="rounded-full size-16 mb-4 border-3 border-gray-300 rounded-[60% 40% 30% 70%/60% 30% 70% 40%] animate-change-border-radius"
+					src="https://ebarronteodoro.github.io/mi-portafolio-web/images/Esteban.jpg"
+					alt="esteban"
+				/>
+				<Badge>Disponible para trabajar</Badge>
+			</div>
 			<h1
-				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10"
+				class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
 			>
-				Hola! soy Esteban <Badge>Disponible para trabajar</Badge>
+				Hola! soy Esteban
 			</h1>
-			<h2 class="text-2xl text-wrap">
-				<span>+1 año de experiencia.</span>
-				<span class="text-yellow-200/90">Desarrollador Web.</span>
-				<span class="text-red-200/90"> De Lima Perú</span>
-				<span class="opacity-75"> apasionado de la programación, me defino por ser una persona buena trabajando en equipo y con ganas de expandir sus conocimientos. Me considero una persona responsable y estoy buscando mi nueva experiencia laboral.</span>
-			</h2>
+			<p
+				class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300 text-balance"
+			>
+				+1 año de experiencia.
+				<strong>Programador y Desarrollador Web</strong>
+				de Lima Perú apasionado de la programación, me defino por ser una
+				persona buena trabajando en equipo y con ganas de expandir sus conocimientos.
+				Me considero una persona responsable y estoy buscando mi nueva experiencia
+				laboral.
+			</p>
 
-			<nav class="flex gap-x-4 mt-8">
+			<nav class="flex gap-4 lg:gap-x-4 mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/ebarronteodoro/">
-					<LinkedInIcon class="size-6" />
+					<LinkedInIcon class="size-4 md:size-6" />
 					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/ebarronteodoro">
-					<GithubIcon class="size-6" />
+					<GithubIcon class="size-4 md:size-6" />
 					GitHub
 				</SocialPill>
-				<SocialPill href="https://ebarronteodoro@gmail.com">
-					<MailIcon class="size-6" />
+				<SocialPill href="mailto:ebarronteodoro@gmail.com">
+					<MailIcon class="size-4 md:size-6" />
 					ebarronteodoro@gmail.com
 				</SocialPill>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer id="experiencia">
-			<h2 class="text-4xl font-semibold mb-6 flex gap-x-3 items-center">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<BriefcaseIcon class="size-7" />
-				Experiencia Laboral</h2>
+				Experiencia Laboral
+			</h2>
 			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Projects />
 		</SectionContainer>
 	</main>
 </Layout>
