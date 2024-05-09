@@ -7,6 +7,7 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
 import Hero from "../components/Hero.astro";
+import About_me from "../components/About_me.astro";
 ---
 
 <Layout
@@ -14,7 +15,7 @@ import Hero from "../components/Hero.astro";
 	description="Contrata a Esteban y descubre cómo puede llevar tu proyecto al siguiente nivel."
 >
 	<main class="px-6">
-		<SectionContainer class="pt-20 pb-16 md:py-16">
+		<SectionContainer class="pt-20 pb-16 md:py-20">
 			<Hero />
 		</SectionContainer>
 
@@ -39,6 +40,7 @@ import Hero from "../components/Hero.astro";
 				<UserIcon class="size-7" />
 				Sobre mí
 			</h2>
+			<About_me />
 		</SectionContainer>
 	</main>
 </Layout>
